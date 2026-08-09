@@ -3,7 +3,7 @@ name: Build AI APK
 on:
   workflow_dispatch:
   push:
-    branches:
+    branchos:
       - main
 
 concurrency:
@@ -25,10 +25,10 @@ jobs:
           java-version: "17"
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@3
 
       - name: Grant execute permission
-        run: chmod +x ./yes
+        run: chmod +x ./gradlew
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug
